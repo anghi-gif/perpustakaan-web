@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Digital - Beranda</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link ke file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Message Box Element -->
+    <div id="messageBox" class="rounded-lg"></div>
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-md py-4 px-6 flex flex-col md:flex-row items-center justify-between rounded-b-lg">
+        <!-- Logo -->
+        <div class="flex items-center mb-4 md:mb-0">
+            <svg class="w-8 h-8 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13.5m0-13.5C10.835 5.47 9.248 5 7.5 5S4.165 5.47 3 6.253m9 0c1.165.783 2.752 1.253 4.5 1.253s3.335-.47 4.5-1.253m-9 0V3.75l-4.5 1.5-4.5-1.5V6.253m9 0v13.5m0-13.5c-1.165.783-2.752 1.253-4.5 1.253S4.165 19.47 3 20.253m9 0c1.165.783 2.752 1.253 4.5 1.253s3.335-.47 4.5-1.253m-9 0V20.25l-4.5-1.5-4.5 1.5V20.253"></path>
+            </svg>
+            <h1 class="text-2xl font-bold text-gray-800">Perpustakaan Digital</h1>
+        </div>
+
+        <!-- Mobile Menu Button (Hamburger) -->
+        <button id="mobileMenuButton" class="md:hidden text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md p-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+
+        <!-- Navigation Menu -->
+        <nav id="mainNav" class="hidden md:flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 mt-4 md:mt-0 w-full md:w-auto items-center">
+            <a href="index.html" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 ease-in-out rounded-md px-3 py-2">Beranda</a>
+            <a href="transaksi.html" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 ease-in-out rounded-md px-3 py-2">Transaksi</a>
+            <a href="profil.html" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 ease-in-out rounded-md px-3 py-2">Profil</a>
+            <a href="login.html" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 ease-in-out rounded-md px-3 py-2">Login</a>
+            <!-- Search Bar -->
+            <div class="relative w-full md:w-auto">
+                <input type="text" placeholder="Cari buku..." class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-48">
+                <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area - Beranda -->
+    <main id="app-content" class="flex-grow p-6 container mx-auto">
+        <section class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-16 px-8 text-center rounded-xl shadow-lg mb-12">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4 animate-fade-in-down">Selamat Datang di Perpustakaan Digital!</h2>
+            <p class="text-lg md:text-xl mb-8 animate-fade-in-up">Jelajahi ribuan koleksi buku, jurnal, dan sumber daya digital lainnya.</p>
+            <button class="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Mulai Jelajahi
+            </button>
+        </section>
+
+        <section class="mb-12">
+            <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">Buku Terbaru & Rekomendasi</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Book Card 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
+                    <img src="https://placehold.co/400x600/E0F2F7/0288D1?text=Sampul+Buku+1" alt="Sampul Buku 1" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">Judul Buku Fantasi</h4>
+                        <p class="text-gray-600 text-sm mb-4">Penulis Terkenal</p>
+                        <p class="text-gray-700 text-base mb-4">Deskripsi singkat tentang buku ini. Genre: Fantasi, Petualangan.</p>
+                        <button class="bg-blue-600 text-white hover:bg-blue-700 font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out w-full">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+                <!-- Book Card 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
+                    <img src="https://placehold.co/400x600/FFF3E0/E65100?text=Sampul+Buku+2" alt="Sampul Buku 2" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">Sejarah Dunia Modern</h4>
+                        <p class="text-gray-600 text-sm mb-4">Sejarawan Agung</p>
+                        <p class="text-gray-700 text-base mb-4">Sebuah tinjauan komprehensif tentang peristiwa-peristiwa penting.</p>
+                        <button class="bg-blue-600 text-white hover:bg-blue-700 font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out w-full">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+                <!-- Book Card 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
+                    <img src="https://placehold.co/400x600/E8F5E9/2E7D32?text=Sampul+Buku+3" alt="Sampul Buku 3" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">Resep Masakan Nusantara</h4>
+                        <p class="text-gray-600 text-sm mb-4">Chef Ternama</p>
+                        <p class="text-gray-700 text-base mb-4">Kumpulan resep otentik dari berbagai daerah di Indonesia.</p>
+                        <button class="bg-blue-600 text-white hover:bg-blue-700 font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out w-full">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+                <!-- Book Card 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
+                    <img src="https://placehold.co/400x600/FCE4EC/C2185B?text=Sampul+Buku+4" alt="Sampul Buku 4" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">Panduan Coding untuk Pemula</h4>
+                        <p class="text-gray-600 text-sm mb-4">Programmer Handal</p>
+                        <p class="text-gray-700 text-base mb-4">Dasar-dasar pemrograman yang mudah dipahami.</p>
+                        <button class="bg-blue-600 text-white hover:bg-blue-700 font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out w-full">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-blue-50 py-12 px-8 rounded-xl shadow-lg">
+            <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">Kategori Populer</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-blue-200 text-blue-800 px-4 py-2 rounded-full text-lg font-medium hover:bg-blue-300 transition duration-300 ease-in-out cursor-pointer">Fiksi</span>
+                <span class="bg-green-200 text-green-800 px-4 py-2 rounded-full text-lg font-medium hover:bg-green-300 transition duration-300 ease-in-out cursor-pointer">Sejarah</span>
+                <span class="bg-purple-200 text-purple-800 px-4 py-2 rounded-full text-lg font-medium hover:bg-purple-300 transition duration-300 ease-in-out cursor-pointer">Sains</span>
+                <span class="bg-yellow-200 text-yellow-800 px-4 py-2 rounded-full text-lg font-medium hover:bg-yellow-300 transition duration-300 ease-in-out cursor-pointer">Teknologi</span>
+                <span class="bg-red-200 text-red-800 px-4 py-2 rounded-full text-lg font-medium hover:bg-red-300 transition duration-300 ease-in-out cursor-pointer">Bisnis</span>
+                <span class="bg-teal-200 text-teal-800 px-4 py-2 rounded-full text-lg font-medium hover:bg-teal-300 transition duration-300 ease-in-out cursor-pointer">Seni & Budaya</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-8 px-6 mt-auto rounded-t-lg">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Kontak Kami</h3>
+                <p class="text-gray-400">Jl. Perpustakaan No. 123, Kota Buku, 12345</p>
+                <p class="text-gray-400">Telepon: (021) 123-4567</p>
+                <p class="text-gray-400">Email: info@perpustakaan.com</p>
+            </div>
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Tautan Cepat</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 ease-in-out rounded-md">Kebijakan Privasi</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 ease-in-out rounded-md">Syarat & Ketentuan</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 ease-in-out rounded-md">FAQ</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 ease-in-out rounded-md">Peta Situs</a></li>
+                </ul>
+            </div>
+            <!-- Social Media -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Ikuti Kami</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300 ease-in-out rounded-full p-2">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300 ease-in-out rounded-full p-2">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12.497 1.75C14.62 1.75 14.868 1.75 15.65 1.79c.77.03 1.25.16 1.63.31.42.17.72.38.99.65.27.27.48.57.65.99.15.38.28.86.31 1.63.04.78.04 1.02.04 3.15s0 2.37-.04 3.15c-.03.77-.16 1.25-.31 1.63-.17.42-.38.72-.65.99-.27.27-.57.48-.99.65-.38.15-.86.28-1.63.31-.78.04-1.02.04-3.15.04s-2.37 0-3.15-.04c-.77-.03-1.25-.16-1.63-.31-.42-.17-.72-.38-.99-.65-.27-.27-.48-.57-.65-.99-.15-.38-.28-.86-.31-1.63-.04-.78-.04-1.02-.04-3.15s0-2.37.04-3.15c.03-.77.16-1.25.31-1.63.17-.42.38-.72.65-.99.27-.27.57-.48.99-.65.38-.15.86-.28 1.63-.31.78-.04 1.02-.04 3.15-.04ZM12 10.211a1.789 1.789 0 1 0 0 3.578 1.789 1.789 0 0 0 0-3.578ZM12 0a12 12 0 1 1 0 24 12 12 0 0 1 0-24Zm5.297 5.297a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300 ease-in-out rounded-full p-2">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M19.5 0h-15C2.013 0 0 2.013 0 4.5v15C0 21.987 2.013 24 4.5 24h15c2.487 0 4.5-2.013 4.5-4.5v-15C24 2.013 21.987 0 19.5 0zM7.25 20.5h-2.5V9.5h2.5V20.5zM6 8.5c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2zM20.5 20.5h-2.5V14.5c0-1.5-.5-2.5-1.75-2.5-1.25 0-2 .875-2 2.5V20.5h-2.5V9.5h2.5v1.5c.375-.5 1.25-1.5 2.5-1.5 2.75 0 3.75 2 3.75 5.5V20.5z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-gray-500 mt-8">
+            &copy; 2024 Perpustakaan Digital. Hak Cipta Dilindungi.
+        </div>
+    </footer>
+
+    <!-- Link ke file JavaScript eksternal -->
+    <script src="script.js"></script>
+</body>
+</html>
